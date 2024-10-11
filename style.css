@@ -1,0 +1,192 @@
+/* Base reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1b1b1b; /* Dark-ish background */
+    color: #f4f4f4; /* Light text for good contrast */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    height: 100vh;
+}
+
+/* Carousel container */
+.game-carousel {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 1000px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #242424; /* Slightly lighter than the background */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+}
+
+/* Individual game card styling */
+.game-card {
+    width: 180px;
+    height: 180px;
+    margin: 0 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0.5;
+    background-color: #1E90FF; /* Blue background for each card */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.game-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Highlight the selected game */
+.highlighted {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0px 6px 15px rgba(30, 144, 255, 0.6); /* Glowing effect */
+    border: 3px solid #f4f4f4;
+}
+
+/* Game details section */
+.game-details {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #242424;
+    width: 60%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+#game-thumbnail {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 4px solid #1E90FF; /* Blue border to match the theme */
+    box-shadow: 0px 4px 10px rgba(30, 144, 255, 0.3); /* Subtle blue glow */
+}
+
+.game-info {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#game-title {
+    max-width: 26rem;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #1E90FF; /* Dodger blue for the title */
+}
+
+#game-description {
+    font-size: 16px;
+    color: #d3d3d3; /* Slightly lighter text for contrast */
+    max-width: 26rem;
+    text-align: center;
+    line-height: 23px;
+}
+
+.game-card:not(.highlighted):hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+    box-shadow: 0px 4px 12px rgba(30, 144, 255, 0.4); /* Blue shadow on hover */
+}
+
+/* Ensure that the title is centered under the card container */
+.game-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1e90ff;
+    margin-top: 20px; /* Space between the cards and the title */
+}
+
+.description {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    margin-top: 10px; /* Adjust margin for better spacing */
+    line-height: 1.6;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* If you need specific styling for highlighted descriptions */
+.highlighted-text {
+    background-color: yellow; /* Highlighting effect */
+    font-weight: bold;
+}
+
+.play-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #1E90FF;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.play-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(30, 144, 255, 0.6);
+}
+
+.play-button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 4px 8px rgba(30, 144, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .game-title {
+        font-size: 1.8rem;
+    }
+    .description {
+        font-size: 1.2rem;
+    }
+}
+
+@keyframes rainbowText {
+    0% { color: #FF0000; }   
+    16% { color: #FF7F00; } 
+    33% { color: #FFFF00; } 
+    50% { color: #00FF00; } 
+    66% { color: #0000FF; } 
+    83% { color: #4B0082; } 
+    100% { color: #8B00FF; }
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover, p:hover, a:hover, span:hover {
+    animation: rainbowText 2s linear infinite;
+}
+
+.text:hover {
+    animation: rainbowText 2s linear infinite;
+}
